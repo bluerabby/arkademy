@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <!-- key untuk hobbies dan school masih stuck -->
+  <p id="biodata"></p>
+  <script>
+    var myObj, i, j, k, x = "";
+    myObj = {
+      "name": "Aditya Prayoga",
+      "address": "Baran Gembongan Baran Ambarawa Kab.Semarang Jateng",
+      //    "hobbies" : [ "Menulis", "Fotografi", "Basket", "Cinematografi" ]
+      "is_married": false,
+      /*     "school" : {
+                "highschool" : "SMK Negeri 2 Salatiga",
+                "university" : "Belum masuk universitas, semoga saya bisa masuk ITS atau Univ Trisakti",
+                } */
+      "skills": [{
+          "name": "Programming",
+          "models": ["php", "c++", "java"]
+        },
+        {
+          "name": "Administrasi Server",
+          "models": ["WinServer", "Debian", "Mikrotik"]
+        },
+        {
+          "name": "Desain Grafis",
+          "models": ["Photoshop", "Illustrator"]
+        }
+      ]
+    }
+    for (i in myObj.skills) {
+      x += "<h6>" + myObj.skills[i].name + "</h6>";
+      for (j in myObj.skills[i].models) {
+        x += myObj.skills[i].models[j] + "<br>";
+      }
+    }
+
+    document.getElementById("biodata").innerHTML = myObj.name + " | " + myObj.address + " | " + myObj.is_married + " | " + x;
+    //      document.getElementById("biodata").innerHTML = x;
+  </script>
+</body>
+
+</html>
